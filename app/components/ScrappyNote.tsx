@@ -83,7 +83,7 @@ function ScrappyNote({ note, setBlockNoteCreation, handleNoteDelete, showTooltip
           style={{
             textAlign: 'center',
             position: 'absolute',
-            top: '-70px',
+            top: '-110px',
             left: '50%',
             transform: 'translateX(-50%)',
             backgroundColor: 'rgba(0, 0, 0, 0.8)',
@@ -93,7 +93,7 @@ function ScrappyNote({ note, setBlockNoteCreation, handleNoteDelete, showTooltip
             fontSize: '12px',
           }}
         >
-          Posicione o Scrappy onde quiser!
+          Clique e arraste para posicionar o Scrappy onde quiser!
         </div>
       )}
       <IoIosCloseCircle
