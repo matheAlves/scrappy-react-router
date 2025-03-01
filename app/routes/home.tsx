@@ -5,7 +5,7 @@ export function meta() {
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-center items-center w-svw h-svh">
+    <main className="flex flex-col justify-center items-center w-svw h-svh bg-black">
       <img src="/public/logo.png" />
       <Link
         to="/matheus"
