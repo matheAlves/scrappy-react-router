@@ -79,7 +79,7 @@ export default function UserProfile({ params: { user } }: Route.ComponentProps) 
             }}
           >
             Clique em qualquer lugar para deixar um Scrappy!
-            <br /> * Esta é apenas uma demonstração, os Scrappies não são salvo permanentemente. Atualize a página para
+            <br /> * Esta é apenas uma demonstração, os Scrappies não são salvos permanentemente. Atualize a página para
             limpar a tela.
           </div>
         )}
