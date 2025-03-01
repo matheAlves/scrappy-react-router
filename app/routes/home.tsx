@@ -6,7 +6,7 @@ export function meta() {
 export default function Home() {
   return (
     <main className="flex flex-col justify-center items-center w-svw h-svh bg-black">
-      <img src="/public/logo.png" />
+      <img src="/logo.png" />
       <Link
         to="/matheus"
         className="bg-[#9ACD32] text-black font-bold py-2 px-4 rounded-lg shadow-inner flex items-center justify-center transition-colors duration-300 hover:bg-[#AEE14B] hover:shadow-[0_0_10px_#AEE14B] cursor-pointer"
