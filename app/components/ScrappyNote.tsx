@@ -83,7 +83,7 @@ function ScrappyNote({ note, setBlockNoteCreation, handleNoteDelete, showTooltip
           style={{
             textAlign: 'center',
             position: 'absolute',
-            top: '-110px',
+            top: '-80px',
             left: '50%',
             transform: 'translateX(-50%)',
             backgroundColor: 'rgba(0, 0, 0, 0.8)',
@@ -91,6 +91,7 @@ function ScrappyNote({ note, setBlockNoteCreation, handleNoteDelete, showTooltip
             padding: '5px',
             borderRadius: '5px',
             fontSize: '12px',
+            width: '150px',
           }}
         >
           Clique e arraste para posicionar o Scrappy onde quiser!
@@ -136,6 +137,25 @@ function ScrappyNote({ note, setBlockNoteCreation, handleNoteDelete, showTooltip
         color: 'black',
       }}
     >
+      {showTooltip && (
+        <div
+          style={{
+            textAlign: 'center',
+            position: 'absolute',
+            top: '-90px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+            color: 'white',
+            padding: '5px',
+            borderRadius: '5px',
+            fontSize: '12px',
+            width: '150px',
+          }}
+        >
+          Depois de confirmar, você pode clicar duas vezes para editar um Scrappy.
+        </div>
+      )}
       <textarea
         placeholder="Escreva seu scrappy ;)"
         ref={textAreaRef}

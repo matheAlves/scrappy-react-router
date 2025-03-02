@@ -60,7 +60,7 @@ export default function UserProfile({ params: { user } }: Route.ComponentProps) 
     >
       <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd} modifiers={[restrictToParentElement]}>
         <section className="flex flex-col justify-center items-center self-start ">
-          <img className="rounded-full w-36" src="/avatar_silhouette.png"></img>
+          <img className="rounded-full w-36" src="/avatar.png"></img>
           <h1 className="text-5xl">{user}</h1>
         </section>
         {notes.length === 0 && (
@@ -70,7 +70,6 @@ export default function UserProfile({ params: { user } }: Route.ComponentProps) 
               left: '50%',
               transform: 'translate(-50%, -50%)',
               textAlign: 'center',
-
               backgroundColor: 'rgba(0, 0, 0, 0.8)',
               color: 'white',
               padding: '5px',
