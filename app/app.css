@@ -8,7 +8,7 @@
 
 html,
 body {
-  @apply bg-white dark:bg-black;
+  @apply bg-white dark:bg-[#121212];
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
