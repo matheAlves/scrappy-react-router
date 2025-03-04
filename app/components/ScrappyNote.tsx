@@ -21,6 +21,7 @@ interface ScrappyNoteProps {
 function ScrappyNote({ note, setBlockNoteCreation, handleNoteDelete, showTooltip }: ScrappyNoteProps) {
   const [text, setText] = useState('');
   const [isEditing, setIsEditing] = useState(true);
+  const [hoveringDelete, setHoveringDelete] = useState(false);
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
@@ -62,7 +63,7 @@ function ScrappyNote({ note, setBlockNoteCreation, handleNoteDelete, showTooltip
       ref={setNodeRef}
       style={{
         ...style,
-        border: '1px solid #ccc',
+        // border: '[0.5]px solid #ccc',
         padding: '10px',
         backgroundColor: '#ffff99',
         width: '200px',
@@ -73,9 +74,10 @@ function ScrappyNote({ note, setBlockNoteCreation, handleNoteDelete, showTooltip
         color: 'black',
         ...cursorStyle,
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        zIndex: 1,
       }}
+      {...(hoveringDelete ? {} : listeners)}
       {...attributes}
-      {...listeners}
       onDoubleClick={handleDoubleClick}
     >
       {showTooltip && (
@@ -104,6 +106,7 @@ function ScrappyNote({ note, setBlockNoteCreation, handleNoteDelete, showTooltip
         }}
         style={{
           position: 'absolute',
+          zIndex: 999,
           top: '5px',
           right: '5px',
           color: 'red',
@@ -115,12 +118,17 @@ function ScrappyNote({ note, setBlockNoteCreation, handleNoteDelete, showTooltip
           opacity: 0.1,
           transition: 'opacity 0.3s',
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
-        onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.1')}
+        onMouseEnter={(e) => {
+          setHoveringDelete(true);
+          return (e.currentTarget.style.opacity = '1')
+        }}
+        onMouseLeave={(e) => {
+          setHoveringDelete(false);
+          return (e.currentTarget.style.opacity = '0.1')
+        }}
       />
-
       <div>{text}</div>
-    </div>
+    </div >
   ) : (
     <div
       ref={setNodeRef}
